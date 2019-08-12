@@ -70,231 +70,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!--top-header-->
-<!--bottom-header-->
+	<!--bottom-header-->
 	<div class="header-bottom">
 		<div class="container">
 			<div class="top-nav">
-				<ul class="memenu skyblue"><li class="active"><a href="/">Home</a></li>
-					<li class="grid"><a href="#">Men</a>
+				<ul class="memenu skyblue">
+					<li class="active">
+						<a href="/">Home</a>
+					</li>
+					<% for(var i=0; i<nav.length; i++){ %>
+					<li class="grid"><a href=<%= nav[i].link %>> <%= nav[i].title %> </a>
 						<div class="mepanel">
 							<div class="row">
+								<% for(var j=0; j<subNav.length; j++){ %>
 								<div class="col1 me-one">
-									<h4>Shop</h4>
+									<h4><%= subNav[j].subTitle %></h4>
 									<ul>
-										<li><a href="/products">New Arrivals</a></li>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">login</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">My Shopping Bag</a></li>
+										<% for(var k=0; k<subNav[j].subCategory.length; k++){ %>
+										<li><a href=<%= subNav[j].subCategory[k].categoryLink %>> <%= subNav[j].subCategory[k].categoryTitle %> </a></li>
+										<% } %>
 									</ul>
 								</div>
-								<div class="col1 me-one">
-									<h4>Style Zone</h4>
-									<ul>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Style Videos</a></li>
-									</ul>	
-								</div>
-								<div class="col1 me-one">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="/products">Levis</a></li>
-										<li><a href="/products">Persol</a></li>
-										<li><a href="/products">Nike</a></li>
-										<li><a href="/products">Edwin</a></li>
-										<li><a href="/products">New Balance</a></li>
-										<li><a href="/products">Jack & Jones</a></li>
-										<li><a href="/products">Paul Smith</a></li>
-										<li><a href="/products">Ray-Ban</a></li>
-										<li><a href="/products">Wood Wood</a></li>
-									</ul>	
-								</div>
+								<% } %>
 							</div>
 						</div>
 					</li>
-					<li class="grid"><a href="#">Women</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Shop</h4>
-									<ul>
-										<li><a href="/products">New Arrivals</a></li>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">login</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">My Shopping Bag</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Style Zone</h4>
-									<ul>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Style Videos</a></li>
-									</ul>	
-								</div>
-								<div class="col1 me-one">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="/products">Levis</a></li>
-										<li><a href="/products">Persol</a></li>
-										<li><a href="/products">Nike</a></li>
-										<li><a href="/products">Edwin</a></li>
-										<li><a href="/products">New Balance</a></li>
-										<li><a href="/products">Jack & Jones</a></li>
-										<li><a href="/products">Paul Smith</a></li>
-										<li><a href="/products">Ray-Ban</a></li>
-										<li><a href="/products">Wood Wood</a></li>
-									</ul>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="grid"><a href="#">Kids</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Shop</h4>
-									<ul>
-										<li><a href="/products">New Arrivals</a></li>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">login</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">My Shopping Bag</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Style Zone</h4>
-									<ul>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Style Videos</a></li>
-									</ul>	
-								</div>
-								<div class="col1 me-one">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="/products">Levis</a></li>
-										<li><a href="/products">Persol</a></li>
-										<li><a href="/products">Nike</a></li>
-										<li><a href="/products">Edwin</a></li>
-										<li><a href="/products">New Balance</a></li>
-										<li><a href="/products">Jack & Jones</a></li>
-										<li><a href="/products">Paul Smith</a></li>
-										<li><a href="/products">Ray-Ban</a></li>
-										<li><a href="/products">Wood Wood</a></li>
-									</ul>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="grid"><a href="#">Sports</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Shop</h4>
-									<ul>
-										<li><a href="/products">New Arrivals</a></li>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">login</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">My Shopping Bag</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Style Zone</h4>
-									<ul>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Style Videos</a></li>
-									</ul>	
-								</div>
-								<div class="col1 me-one">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="/products">Levis</a></li>
-										<li><a href="/products">Persol</a></li>
-										<li><a href="/products">Nike</a></li>
-										<li><a href="/products">Edwin</a></li>
-										<li><a href="/products">New Balance</a></li>
-										<li><a href="/products">Jack & Jones</a></li>
-										<li><a href="/products">Paul Smith</a></li>
-										<li><a href="/products">Ray-Ban</a></li>
-										<li><a href="/products">Wood Wood</a></li>
-									</ul>	
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="grid"><a href="#">Brands</a>
-						<div class="mepanel">
-							<div class="row">
-								<div class="col1 me-one">
-									<h4>Shop</h4>
-									<ul>
-										<li><a href="/products">New Arrivals</a></li>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">login</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">My Shopping Bag</a></li>
-									</ul>
-								</div>
-								<div class="col1 me-one">
-									<h4>Style Zone</h4>
-									<ul>
-										<li><a href="/products">Men</a></li>
-										<li><a href="/products">Women</a></li>
-										<li><a href="/products">Brands</a></li>
-										<li><a href="/products">Kids</a></li>
-										<li><a href="/products">Accessories</a></li>
-										<li><a href="/products">Style Videos</a></li>
-									</ul>	
-								</div>
-								<div class="col1 me-one">
-									<h4>Popular Brands</h4>
-									<ul>
-										<li><a href="/products">Levis</a></li>
-										<li><a href="/products">Persol</a></li>
-										<li><a href="/products">Nike</a></li>
-										<li><a href="/products">Edwin</a></li>
-										<li><a href="/products">New Balance</a></li>
-										<li><a href="/products">Jack & Jones</a></li>
-										<li><a href="/products">Paul Smith</a></li>
-										<li><a href="/products">Ray-Ban</a></li>
-										<li><a href="/products">Wood Wood</a></li>
-									</ul>	
-								</div>
-							</div>
-						</div>
-					</li>
+					<% } %>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>

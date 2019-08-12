@@ -9,6 +9,12 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+var productrouter = require('./routes/productsrouter');
+var accountrouter = require('./routes/accountrouter');
+var checkoutrouter = require('./routes/checkoutrouter');
+var singlerouter = require('./routes/singlerouter');
+var contactrouter = require('./routes/contactrouter');
+
 app.get("/",(req,res)=>{
   res.render(
     "index",
@@ -52,25 +58,11 @@ app.get("/",(req,res)=>{
     });
 })
 
-app.get("/products",(req,res)=>{
-  res.render("products");
-})
-
-app.get("/single",(req,res)=>{
-  res.render("single");
-})
-
-app.get("/contact",(req,res)=>{
-  res.render("contact");
-})
-
-app.get("/account",(req,res)=>{
-  res.render("account");
-})
-
-app.get("/checkout",(req,res)=>{
-  res.render("checkout");
-})
+app.use("/products", productrouter);
+app.use("/account", accountrouter);
+app.use("/checkout", checkoutrouter);
+app.use("/single", singlerouter);
+app.use("/contact", contactrouter);
 
 app.listen(8080,()=>{
   console.log("Listening");
