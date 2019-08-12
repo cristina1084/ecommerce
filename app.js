@@ -15,6 +15,49 @@ var checkoutrouter = require('./routes/checkoutrouter');
 var singlerouter = require('./routes/singlerouter');
 var contactrouter = require('./routes/contactrouter');
 
+var shoes_arr =[
+  {
+    "name":"Aenean placerat 1",
+    "img" :"images/shoes-1.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 2",
+    "img" :"images/shoes-2.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 3",
+    "img" :"images/shoes-3.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 13",
+    "img" :"images/shoes-13.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 5",
+    "img" :"images/shoes-5.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 6",
+    "img" :"images/shoes-6.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 7",
+    "img" :"images/shoes-7.png",
+    "price":329
+  },
+  {
+    "name":"Aenean placerat 8",
+    "img" :"images/shoes-8.png",
+    "price":329
+  }
+];
+
 app.get("/",(req,res)=>{
   res.render(
     "index",
@@ -54,7 +97,8 @@ app.get("/",(req,res)=>{
           {categoryLink:"/products", categoryTitle:"Ray-Ban"},
           {categoryLink:"/products", categoryTitle:"Wood Wood"},
         ] }
-      ]
+      ],
+      shoes:shoes_arr
     });
 })
 
