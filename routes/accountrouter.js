@@ -1,6 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+var mongo = require('mongoose');
+var bodyparser = require('body-parser');
+var url = "mongodb://localhost/ecommercedb";
+
+var user = require('../model/user');
+
+router.use(bodyparser.urlencoded({extended:true}));
+
+mongo.connect(url, {useNewUrlParser:true}, (err)=>{
+  if (err) throw err;
+  else console.log("Database Connected");
+});
+
 router.get("/",(req,res)=>{
     res.render(
       "account",
@@ -44,4 +57,17 @@ router.get("/",(req,res)=>{
       });
   })
 
-  module.exports = router;
+router.post("/add",(req,res)=>{
+  var u1 = new user();
+  u1.fname = req.body.fname;
+  u1.lname = req.body.lname;
+  u1.email = req.body.email;
+  u1.pass1 = req.body.pass1;
+  u1.pass2 = req.body.pass2;
+  u1.save((err)=>{
+    if (err) throw err;
+    else res.send("User added");
+  });
+});
+
+module.exports = router;
