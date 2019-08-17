@@ -57,7 +57,7 @@ router.get("/",(req,res)=>{
       });
   })
 
-router.post("/add",(req,res)=>{
+router.post("/",(req,res)=>{
   var u1 = new user();
   u1.fname = req.body.fname;
   u1.lname = req.body.lname;
@@ -66,7 +66,7 @@ router.post("/add",(req,res)=>{
   u1.pass2 = req.body.pass2;
   u1.save((err)=>{
     if (err) throw err;
-    else res.send("User added");
+    else console.log("User added");
   });
 });
 
