@@ -146,19 +146,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--start-shoes--> 
 	<div class="shoes"> 
 		<div class="container"> 
-			<% for(var y=0; y<shoes.length; y+=4 ){ %>
+			<% l=shoes.length-6; for(var y=0; y<l; y+=4 ){ %>
 			<div class="product-one">
-				<% for(var p=y; p<y+4; p++){ %>
+				<% for(var p=y; p<y+4; p++){ if(p==l) break; %>
 				<div class="col-md-3 product-left"> 
 					<div class="p-one simpleCart_shelfItem">							
 							<a href="/single">
-								<img src=<%= shoes[p].img %> alt="" />
+								<img src=images/<%= shoes[p].prod_image %> alt="" />
 								<div class="mask">
 									<span>Quick View</span>
 								</div>
 							</a>
-						<h4><%= shoes[p].name %></h4>
-						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<%= shoes[p].price%></span></a></p>
+						<h4><%= shoes[p].prod_name %></h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<%= shoes[p].prod_price%></span></a></p>
 					</div>
 				</div>
 				<% } %>
