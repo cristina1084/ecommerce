@@ -7,13 +7,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 var productrouter = require('./routes/productsrouter');
 var accountrouter = require('./routes/accountrouter');
 var checkoutrouter = require('./routes/checkoutrouter');
 var singlerouter = require('./routes/singlerouter');
 var contactrouter = require('./routes/contactrouter');
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 var shoes_arr =[
   {

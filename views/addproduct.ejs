@@ -7,13 +7,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Free Style A Ecommerce Category Flat Bootstarp Resposive Website Template | Products :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<title>Free Style A Ecommerce Category Flat Bootstarp Resposive Website Template | Account :: w3layouts</title>
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="/js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,8 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -35,10 +35,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					});
 				</script>	
 <!-- start menu -->
-<script src="js/simpleCart.min.js"> </script>
-<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+<script src="/js/simpleCart.min.js"> </script>
+<link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 </head>
 <body> 
 	<!--top-header-->
@@ -52,14 +52,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 top-header-middle">
-				<a href="/"><img src="images/logo-4.png" alt="" /></a>
+				<a href="/"><img src="/images/logo-4.png" alt="" /></a>
 			</div>
 			<div class="col-md-4 top-header-right">
 				<div class="cart box_1">
 						<a href="/checkout">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart-1.png" alt="" />
+							<img src="/images/cart-1.png" alt=""/></h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 						<div class="clearfix"> </div>
@@ -108,78 +108,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="breadcrumbs-main">
 				<ol class="breadcrumb">
 					<li><a href="/">Home</a></li>
-					<li class="active">New Products</li>
+					<li class="active">New Product</li>
 				</ol>
 			</div>
 		</div>
 	</div>
 	<!--end-breadcrumbs-->
-	<!--start-product--> 
-	<div class="product">
-		<div class="container">
-			<div class="product-main">
-				<div class="col-md-9 p-left">
-					<% for (var x=0; x<shoes.length; x+=3){ %>
-					<div class="product-one">
-						<% for (var p=x; p<x+3; p++){ %>
-						<div class="col-md-4 product-left single-left"> 
-							<div class="p-one simpleCart_shelfItem">
-								<a href="/single">
-									<img src=images/<%= shoes[p].prod_image %> alt="" />
-									<div class="mask mask1">
-										<span>Quick View</span>
-									</div>
-								</a>
-								<h4><%= shoes[p].prod_name %> </h4>
-								<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<%= shoes[p].prod_price %></span></a></p>
-							</div>
+	<!--start-account-->
+	<div class="account">
+		<div class="container"> 
+			<div class="account-bottom">
+				<div class="col-md-6 account-left">
+					<form action="/products/add" method="POST" enctype="multipart/form-data">
+						<div class="account-top heading">
+							<h3>Add Product</h3>
 						</div>
-						<% } %>
-					<div class="clearfix"> </div>
-					</div>
-					<% } %>
-				</div>
-				<div class="col-md-3 p-right single-right">
-					<h3>Categories</h3>
-					<ul class="product-categories">
-						<li><a href="#">Blucher Shoe</a> <span class="count">(14)</span></li>
-						<li><a href="#">Clog Shoe</a> <span class="count">(2)</span></li>
-						<li><a href="#">Snow Boot Shoe</a> <span class="count">(2)</span></li>
-						<li><a href="#">Galesh Shoe</a> <span class="count">(11)</span></li>
-						<li><a href="#">pataugas Shoe</a> <span class="count">(3)</span></li>
-						<li><a href="#">Jazz Shoe</a> <span class="count">(3)</span></li>
-					</ul>
-					<h3>Colors</h3>
-					<ul class="product-categories">
-						<li><a href="#">Green</a> <span class="count">(14)</span></li>
-						<li><a href="#">Blue</a> <span class="count">(2)</span></li>
-						<li><a href="#">Red</a> <span class="count">(2)</span></li>
-						<li><a href="#">Gray</a> <span class="count">(8)</span></li>
-						<li><a href="#">Green</a> <span class="count">(11)</span></li>
-						<li><a href="#">Yellow</a> <span class="count">(2)</span></li>
-					</ul>
-					<h3>Sizes</h3>
-					<ul class="product-categories">
-						<li><a href="#">5.5</a> <span class="count">(14)</span></li>
-						<li><a href="#">6</a> <span class="count">(2)</span></li>
-						<li><a href="#">6.5</a> <span class="count">(2)</span></li>
-						<li><a href="#">7</a> <span class="count">(8)</span></li>
-						<li><a href="#">7.5</a> <span class="count">(11)</span></li>
-					</ul>
-					<h3>Price</h3>
-					<ul class="product-categories p1">
-						<li><a href="#">600$-700$</a> <span class="count">(14)</span></li>
-						<li><a href="#">700$-800$</a> <span class="count">(2)</span></li>
-						<li><a href="#">800$-900$</a> <span class="count">(2)</span></li>
-						<li><a href="#">900$-1000$</a> <span class="count">(8)</span></li>
-						<li><a href="#">1000$-1100$</a> <span class="count">(11)</span></li>
-					</ul>
+						<div class="address">
+							<span>Product Name</span>
+							<input type="text" name="pname" required>
+						</div>
+						<div class="address">
+							<span>Upload Product Image</span>
+							<input type="file" name="pimage">
+						</div>
+						<div class="address">
+							<span>Price</span>
+							<input type="number" name="price" >
+						</div>
+						<div class="address new">
+							<input type="submit" value="add">
+						</div>
+					</form>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-	<!--end-product-->
+	<!--end-account-->
 	<!--start-footer-->
 	<div class="footer">
 		<div class="container">
@@ -239,20 +204,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
+			$(document).ready(function() {
+				/*
+				var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+				};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	</div>
 	<!--end-footer-text-->	
