@@ -1,15 +1,9 @@
 const express = require('express');
 const router = express.Router();
 var bodyparser = require('body-parser');
-var mongo = require('mongoose');
-var url = "mongodb://localhost/ecommercedb";
+var path = require('path');
 
 var prod = require('../model/product');
-
-mongo.connect(url, {useNewUrlParser:true}, (err)=>{
-  if (err) throw err;
-  else console.log("Database Connected");
-});
 
 var multer = require('multer'); //module to upload files
 
@@ -126,7 +120,7 @@ router.post("/add", upload, (req,res)=>{
 
   p1.save((err)=>{
     if (err) throw err;
-    else res.send("Product added");
+    else res.redirect("/products");
   });
 });
 module.exports = router;

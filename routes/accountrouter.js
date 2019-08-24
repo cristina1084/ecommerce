@@ -1,18 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-var mongo = require('mongoose');
 var bodyparser = require('body-parser');
-var url = "mongodb://localhost/ecommercedb";
 
 var user = require('../model/user');
 
 router.use(bodyparser.urlencoded({extended:true}));
-
-mongo.connect(url, {useNewUrlParser:true}, (err)=>{
-  if (err) throw err;
-  else console.log("Database Connected");
-});
 
 router.get("/",(req,res)=>{
     res.render(
@@ -57,16 +50,21 @@ router.get("/",(req,res)=>{
       });
   })
 
-router.post("/",(req,res)=>{
-  var u1 = new user();
-  u1.fname = req.body.fname;
-  u1.lname = req.body.lname;
-  u1.email = req.body.email;
-  u1.pass1 = req.body.pass1;
-  u1.pass2 = req.body.pass2;
+router.post("/signup",(req,res)=>{
+  var u1 = new user(req.body);
   u1.save((err)=>{
     if (err) throw err;
-    else console.log("User added");
+    else res.redirect("/account");
+  });
+});
+
+router.post("/login",(req,res)=>{
+  user.find({email:req.body.email, pass1:req.body.pass1}, (err,result)=>{
+    if (err) throw err;
+    else {
+      if (result.length!=0) res.redirect("/products");
+      else res.redirect("/account");
+    }
   });
 });
 

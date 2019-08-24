@@ -1,32 +1,32 @@
 var shoes_arr =[
   {
     "name":"Aenean placerat 1",
-    "img" :"images/shoes-1.png",
+    "img" :"shoes-1.png",
     "price":329
   },
   {
     "name":"Aenean placerat 2",
-    "img" :"images/shoes-2.png",
+    "img" :"shoes-2.png",
     "price":329
   },
   {
     "name":"Aenean placerat 3",
-    "img" :"images/shoes-3.png",
+    "img" :"shoes-3.png",
     "price":329
   },
   {
     "name":"Aenean placerat 5",
-    "img" :"images/shoes-5.png",
+    "img" :"shoes-5.png",
     "price":329
   },
   {
     "name":"Aenean placerat 6",
-    "img" :"images/shoes-6.png",
+    "img" :"shoes-6.png",
     "price":329
   },
   {
     "name":"Aenean placerat 7",
-    "img" :"images/shoes-7.png",
+    "img" :"shoes-7.png",
     "price":329
   }
   ];
@@ -78,4 +78,8 @@ router.get("/",(req,res)=>{
       });
   })
 
+  /* router.get("/view/:pid",(req,res)=>{
+    res.sendFile(path.join(__dirname+"../../public/images/"+req.params.pid));
+  }) */
+  
   module.exports = router;

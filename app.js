@@ -73,6 +73,10 @@ app.get("/",(req,res)=>{
   })
 })
 
+app.get("/view/:pid",(req,res)=>{
+  res.sendFile(path.join(__dirname+"/public/images/"+req.params.pid));
+})
+
 app.use("/products", productrouter);
 app.use("/account", accountrouter);
 app.use("/checkout", checkoutrouter);

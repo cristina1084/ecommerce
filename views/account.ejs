@@ -52,14 +52,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 top-header-middle">
-				<a href="/"><img src="images/logo-4.png" alt="" /></a>
+				<a href="/"><img src="/view/logo-4.png" alt="" /></a>
 			</div>
 			<div class="col-md-4 top-header-right">
 				<div class="cart box_1">
 						<a href="/checkout">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-							<img src="images/cart-1.png" alt=""/></h3>
+							<img src="/view/cart-1.png" alt=""/></h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 						<div class="clearfix"> </div>
@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container"> 
 			<div class="account-bottom">
 				<div class="col-md-6 account-left">
-					<form action="/account" method="POST">
+					<form action="/account/signup" method="POST">
 						<div class="account-top heading">
 							<h3>NEW CUSTOMERS</h3>
 						</div>
@@ -149,17 +149,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</form>
 				</div>
 				<div class="col-md-6 account-left">
-					<form>
+					<form action="/account/login" method="POST">
 					<div class="account-top heading">
 						<h3>REGISTERED CUSTOMERS</h3>
 					</div>
 					<div class="address">
 						<span>Email Address</span>
-						<input type="text">
+						<input type="text" name="email">
 					</div>
 					<div class="address">
 						<span>Password</span>
-						<input type="password">
+						<input type="password" name="pass1">
 					</div>
 					<div class="address">
 						<a class="forgot" href="#">Forgot Your Password?</a>
