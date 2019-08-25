@@ -83,6 +83,6 @@ app.use("/checkout", checkoutrouter);
 app.use("/single", singlerouter);
 app.use("/contact", contactrouter);
 
-app.listen(8000,()=>{
+app.listen(process.env.PORT || 8000,()=>{
   console.log("Listening");
 })
