@@ -112,8 +112,124 @@ router.get("/addproduct",(req,res)=>{
   });
 })
 
+router.get("/updateproduct",(req,res)=>{
+  prod.find({},(err,result)=>{
+    if (err) throw err;
+    else
+    res.render(
+      "update",
+      {
+          nav:[
+          {link:"/products", title:"Men"},
+          {link:"/products", title:"Women"},
+          {link:"/products", title:"Kids"},
+          {link:"/products", title:"Sports"},
+          {link:"/products", title:"Brands"}
+          ],
+          subNav:[
+          {subTitle:"Shop", subCategory:[
+              {categoryLink:"/products", categoryTitle:"New Arrivals"},
+              {categoryLink:"/products", categoryTitle:"Men"},
+              {categoryLink:"/products", categoryTitle:"Women"},
+              {categoryLink:"/products", categoryTitle:"Accessories"},
+              {categoryLink:"/products", categoryTitle:"Kids"},
+              {categoryLink:"/products", categoryTitle:"Brands"},
+          ] },
+          {subTitle:"Style Zone", subCategory:[
+              {categoryLink:"/products", categoryTitle:"Men"},
+              {categoryLink:"/products", categoryTitle:"Women"},
+              {categoryLink:"/products", categoryTitle:"Brands"},
+              {categoryLink:"/products", categoryTitle:"Kids"},
+              {categoryLink:"/products", categoryTitle:"Accessories"},
+              {categoryLink:"/products", categoryTitle:"Style Videos"},
+          ] },
+          {subTitle:"Popular Brands", subCategory:[
+              {categoryLink:"/products", categoryTitle:"Levis"},
+              {categoryLink:"/products", categoryTitle:"Persol"},
+              {categoryLink:"/products", categoryTitle:"Nike"},
+              {categoryLink:"/products", categoryTitle:"Edwin"},
+              {categoryLink:"/products", categoryTitle:"New Balance"},
+              {categoryLink:"/products", categoryTitle:"Jack & Jones"},
+              {categoryLink:"/products", categoryTitle:"Paul Smith"},
+              {categoryLink:"/products", categoryTitle:"Ray-Ban"},
+              {categoryLink:"/products", categoryTitle:"Wood Wood"},
+          ] }
+          ],
+          shoes: result
+      });
+  })
+})
+
+router.get("/edit/:pid",(req,res)=>{
+  prod.find({prod_id:req.params.pid},(err,result)=>{
+    if (err) throw err;
+    else
+    res.render(
+      "edit",
+      {
+          nav:[
+          {link:"/products", title:"Men"},
+          {link:"/products", title:"Women"},
+          {link:"/products", title:"Kids"},
+          {link:"/products", title:"Sports"},
+          {link:"/products", title:"Brands"}
+          ],
+          subNav:[
+          {subTitle:"Shop", subCategory:[
+              {categoryLink:"/products", categoryTitle:"New Arrivals"},
+              {categoryLink:"/products", categoryTitle:"Men"},
+              {categoryLink:"/products", categoryTitle:"Women"},
+              {categoryLink:"/products", categoryTitle:"Accessories"},
+              {categoryLink:"/products", categoryTitle:"Kids"},
+              {categoryLink:"/products", categoryTitle:"Brands"},
+          ] },
+          {subTitle:"Style Zone", subCategory:[
+              {categoryLink:"/products", categoryTitle:"Men"},
+              {categoryLink:"/products", categoryTitle:"Women"},
+              {categoryLink:"/products", categoryTitle:"Brands"},
+              {categoryLink:"/products", categoryTitle:"Kids"},
+              {categoryLink:"/products", categoryTitle:"Accessories"},
+              {categoryLink:"/products", categoryTitle:"Style Videos"},
+          ] },
+          {subTitle:"Popular Brands", subCategory:[
+              {categoryLink:"/products", categoryTitle:"Levis"},
+              {categoryLink:"/products", categoryTitle:"Persol"},
+              {categoryLink:"/products", categoryTitle:"Nike"},
+              {categoryLink:"/products", categoryTitle:"Edwin"},
+              {categoryLink:"/products", categoryTitle:"New Balance"},
+              {categoryLink:"/products", categoryTitle:"Jack & Jones"},
+              {categoryLink:"/products", categoryTitle:"Paul Smith"},
+              {categoryLink:"/products", categoryTitle:"Ray-Ban"},
+              {categoryLink:"/products", categoryTitle:"Wood Wood"},
+          ] }
+          ],
+          shoe: result
+      });
+  })
+})
+
+router.post("/editproduct",upload,(req,res)=>{
+  prod.updateOne({prod_id:req.body.pid}, {$set:{
+    prod_id : req.body.pid,
+    prod_name : req.body.pname,
+    prod_image : req.file.filename,
+    prod_price : req.body.price
+  }},(err,result)=>{
+    if (err) throw err;
+    else res.redirect("/products/updateproduct")
+  })
+})
+
+router.get("/delete/:pid",(req,res)=>{
+  prod.deleteOne({prod_id:req.params.pid},(err,result)=>{
+    if (err) throw err;
+    else res.redirect("/products/updateproduct")
+  })
+})
+
 router.post("/add", upload, (req,res)=>{
   var p1 = new prod();
+  p1.prod_id = req.body.pid;
   p1.prod_name = req.body.pname;
   p1.prod_image = req.file.filename;
   p1.prod_price = req.body.price;

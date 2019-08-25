@@ -3,7 +3,8 @@ var mongo = require('mongoose');
 var schema = mongo.Schema;
 
 var productSchema = new schema({
-    prod_name:{type:String, required:true},
+    prod_id: {type:String, required:true},
+    prod_name:String,
     prod_image:String,
     prod_price:Number
 })

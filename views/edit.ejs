@@ -8,12 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Free Style A Ecommerce Category Flat Bootstarp Resposive Website Template | Account :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="/js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,8 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -35,10 +35,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					});
 				</script>	
 <!-- start menu -->
-<script src="js/simpleCart.min.js"> </script>
-<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/memenu.js"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+<script src="/js/simpleCart.min.js"> </script>
+<link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 </head>
 <body> 
 	<!--top-header-->
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="breadcrumbs-main">
 				<ol class="breadcrumb">
 					<li><a href="/">Home</a></li>
-					<li class="active">Account</li>
+					<li class="active">New Product</li>
 				</ol>
 			</div>
 		</div>
@@ -119,54 +119,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container"> 
 			<div class="account-bottom">
 				<div class="col-md-6 account-left">
-					<form action="/account/signup" method="POST">
+					<form action="/products/editproduct" method="POST" enctype="multipart/form-data">
 						<div class="account-top heading">
-							<h3>NEW CUSTOMERS</h3>
+							<h3>Edit Product</h3>
+						</div> <!--<%= shoe[0].prod_id %> -->
+						<div class="address">
+							<span>Product ID</span>
+							<input type="text" name="pid" value="<%= shoe[0].prod_id %>" readonly>
 						</div>
 						<div class="address">
-							<span>First Name</span>
-							<input type="text" name="fname" required>
+							<span>Product Name</span>
+							<input type="text" name="pname" value="<%= shoe[0].prod_name %>" required>
 						</div>
 						<div class="address">
-							<span>Last Name</span>
-							<input type="text" name="lname" required>
+							<span>Upload Product Image</span>
+							<input type="file" name="pimage" required>
 						</div>
 						<div class="address">
-							<span>Email Address</span>
-							<input type="email" name="email" required>
-						</div>
-						<div class="address">
-							<span>Password</span>
-							<input type="password" name="pass1" required>
-						</div>
-						<div class="address">
-							<span>Reenter Password</span>
-							<input type="password" name="pass2" required>
+							<span>Price</span>
+							<input type="number" name="price" value="<%= shoe[0].prod_price %>" >
 						</div>
 						<div class="address new">
-							<input type="submit" value="submit">
+							<input type="submit" value="update">
 						</div>
 					</form>
 				</div>
-				<div class="col-md-6 account-left">
-					<form action="/account/login" method="POST">
-					<div class="account-top heading">
-						<h3>REGISTERED CUSTOMERS</h3>
-					</div>
-					<div class="address">
-						<span>Email Address</span>
-						<input type="text" name="email">
-					</div>
-					<div class="address">
-						<span>Password</span>
-						<input type="password" name="pass1">
-					</div>
-					<div class="address">
-						<a class="forgot" href="#">Forgot Your Password?</a>
-						<input type="submit" value="Login">
-					</div>
-				</div>
-				</form>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -194,9 +171,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#">Personal Information</a></li>
 						<li><a href="/contact">Addresses</a></li>
 						<li><a href="#">Discount</a></li>
-						<li><a href="#">Track your order</a></li>	
-						<li><a href="/products/addproduct">Add Product</a></li>					 					 
-						<li><a href="/products/updateproduct">Update Product</a></li>					 					 
+						<li><a href="#">Track your order</a></li>					 					 
 					</ul>
 				</div>
 				<div class="col-md-3 footer-left">
@@ -233,20 +208,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<script type="text/javascript">
-									$(document).ready(function() {
-										/*
-										var defaults = {
-								  			containerID: 'toTop', // fading element id
-											containerHoverID: 'toTopHover', // fading element hover id
-											scrollSpeed: 1200,
-											easingType: 'linear' 
-								 		};
-										*/
-										
-										$().UItoTop({ easingType: 'easeOutQuart' });
-										
-									});
-								</script>
+			$(document).ready(function() {
+				/*
+				var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+				};
+				*/
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
 		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	</div>
 	<!--end-footer-text-->	
