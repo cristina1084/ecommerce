@@ -1,40 +1,13 @@
-var shoes_arr =[
-  {
-    "name":"Aenean placerat 1",
-    "img" :"shoes-1.png",
-    "price":329
-  },
-  {
-    "name":"Aenean placerat 2",
-    "img" :"shoes-2.png",
-    "price":329
-  },
-  {
-    "name":"Aenean placerat 3",
-    "img" :"shoes-3.png",
-    "price":329
-  },
-  {
-    "name":"Aenean placerat 5",
-    "img" :"shoes-5.png",
-    "price":329
-  },
-  {
-    "name":"Aenean placerat 6",
-    "img" :"shoes-6.png",
-    "price":329
-  },
-  {
-    "name":"Aenean placerat 7",
-    "img" :"shoes-7.png",
-    "price":329
-  }
-  ];
 
 const express = require('express');
 const router = express.Router();
 
-router.get("/",(req,res)=>{
+var prod = require('../model/product');
+
+router.get("/:pid",(req,res)=>{
+  prod.find({prod_id:req.params.pid},(err,result)=>{
+    if (err) throw err;
+    else
     res.render(
       "single",
       {
@@ -74,9 +47,10 @@ router.get("/",(req,res)=>{
             {categoryLink:"/products", categoryTitle:"Wood Wood"},
           ] }
         ],
-        shoes:shoes_arr
+        shoes:result
       });
   })
+})
 
   /* router.get("/view/:pid",(req,res)=>{
     res.sendFile(path.join(__dirname+"../../public/images/"+req.params.pid));

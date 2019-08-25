@@ -8,12 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Free Style A Ecommerce Category Flat Bootstarp Resposive Website Template | Single :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="/js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,8 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
 <script type="text/javascript">
 					jQuery(document).ready(function($) {
 						$(".scroll").click(function(event){		
@@ -35,9 +35,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					});
 				</script>	
 <!-- start menu -->
-<script src="js/simpleCart.min.js"> </script>
-<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="js/memenu.js"></script>
+<script src="/js/simpleCart.min.js"> </script>
+<link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/js/memenu.js"></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>				
 </head>
 <body> 
@@ -123,23 +123,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-5 single-top-left">	
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="/view/s1.jpg">
-									<img src="/view/s1.jpg" />
+								<% for(var i=0; i<4; i++){%>
+								<li data-thumb="/view/<%= shoes[0].prod_image %>">
+									<img src="/view/<%= shoes[0].prod_image %>" />
 								</li>
-								<li data-thumb="/view/s2.jpg">
-									<img src="/view/s2.jpg" />
-								</li>
-								<li data-thumb="/view/s3.jpg">
-									<img src="/view/s3.jpg" />
-								</li>
-								<li data-thumb="/view/s4.jpg">
-									<img src="/view/s4.jpg" />
-								</li>
+								<% } %>
 							</ul>
 						</div>
 <!-- FlexSlider -->
-  <script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+  <script defer src="/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" />
 
 	<script>
 // Can also be used with $(document).ready()
@@ -153,11 +146,10 @@ $(window).load(function() {
 				</div>	
 				<div class="col-md-7 single-top-right">
 					<div class="details-left-info simpleCart_shelfItem">
-						<h3>Accessories Latest</h3>
+						<h3><%= shoes[0].prod_name %></h3>
 						<p class="availability">Availability: <span class="color">In stock</span></p>
 						<div class="price_single">
-							<span class="reducedfrom">$800.00</span>
-							<span class="actual item_price">$600.00</span><a href="#">click for offer</a>
+							<span class="actual item_price">$<%= shoes[0].prod_price %></span><a href="#">click for offer</a>
 						</div>
 						<h2 class="quick">Quick Overview:</h2>
 						<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
@@ -199,27 +191,6 @@ $(window).load(function() {
 		</div>
 		<div class="clearfix"></div>
 	</div>
-					<div class="latest products">
-						<% for (var x=0; x<shoes.length; x+=3){ %>
-							<div class="product-one">
-							<% for (var p=x; p<x+3; p++){ %>
-							<div class="col-md-4 product-left single-left"> 
-								<div class="p-one simpleCart_shelfItem">
-									<a href="/single">
-										<img src=/view/<%= shoes[p].img %> alt="" />
-										<div class="mask mask1">
-											<span>Quick View</span>
-										</div>
-									</a>
-									<h4><%= shoes[p].name %> </h4>
-									<p><a class="item_add" href="#"><i></i> <span class=" item_price">$<%= shoes[p].price %></span></a></p>
-								</div>
-							</div>
-							<% } %>
-						<div class="clearfix"> </div>
-						</div>
-						<% } %>
-					</div>
 				</div>
 				<div class="col-md-3 single-right">
 					<h3>Categories</h3>
