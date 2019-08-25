@@ -151,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<% for(var p=y; p<y+4; p++){ if(p==shoes.length-5) break; %>
 				<div class="col-md-3 product-left"> 
 					<div class="p-one simpleCart_shelfItem">							
-							<a href="/single">
+							<a href="/single/<%= shoes[p].prod_id %>">
 								<img src=/view/<%= shoes[p].prod_image %> alt="" />
 								<div class="mask">
 									<span>Quick View</span>
