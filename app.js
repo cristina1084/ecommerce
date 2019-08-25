@@ -3,7 +3,7 @@ var path = require('path');
 var mongo = require('mongoose');
 var app = express();
 
-var url = "mongodb://localhost/ecommercedb";
+var url = "mongodb+srv://admin:REhimalayan123@cluster1-as5bb.mongodb.net/ecommerce?retryWrites=true&w=majority";
 
 var prod = require("./model/product");
 
